@@ -3,7 +3,7 @@ layout: post
 title:  "Starting hacking web apps? Where to practice?"
 date:   2021-11-17 20:17:21 +0330
 categories: jekyll update
----vim
+---
 In this blog, I try to practice hacking web apps using a dummy website. I downloaded bWAPP (buggy web app) which is a webapp purposefully designed to be exploited. They are for security enthusiasts and webdev students to practice common security topics. To set it up I have to setup my own homeserver with nginx.Basically put them on localhost and do all nasty stuff with it without being scared of any legal backlash.
 
 ## Setting up nginx and php
