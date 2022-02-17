@@ -17,3 +17,4 @@ FLUSH PRIVILEGES;
 ```
 And voila we now can try hacking stuff.
 In next blog I will focus on practicing HTML injection vulnerability.
+
