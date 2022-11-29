@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What's a network interface?11"
+title:  "What's a network interface?"
 date:   2022-11-28 18:20:21 +0330
 categories: jekyll update
 tags: 
