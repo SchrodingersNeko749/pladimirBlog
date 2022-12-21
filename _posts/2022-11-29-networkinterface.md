@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Network interface and namespace"
+title:  "Network interface"
 date:   2022-11-28 18:20:21 +0330
 categories: jekyll update
 tags: 
@@ -8,17 +8,17 @@ tags:
 ---
 ## A familiar word
 
-No matter you have been configuring your network, a container, or just reading random blogs on internet you have heard this word.
+No matter if you have been configuring your network, a container, or just reading random blogs on internet you have heard about this word.
 
 ## What exactly is it then
 
 If you type `ifconfig` or `ip a` in your terminal you will see block(s) of information in which there are words like `lo`, `wlp3s0`, `wireguard`, `eth0`. these are called network interfaces.
-These interfaces can be either physical, which means they are connected to a network adaptor like eth0 or wlp3s0, or completely virtual like loopback or wireguard.
+These interfaces can be either physical, which means they are connected to a network adaptor like `eth0` or `wlp3s0`, or completely virtual like `lo` or `wireguard`.
 While this information might make some satisfied we need to ask some fundumental questions to get a little bit more out of it.
 
 ## lets say you dont have a network interface
 
-What happens when let's say you delete all the interfaces in your `ifconfig`?
+What happens when let's say you delete all the interfaces that appear in your `ifconfig`?
 
 Then you wont be able to connect to any other computer, or even to your own computer!
 One of the interfaces is called `lo` or loopback. `lo` is a virtual interface because as opposed to physical. If you have any experience with web development you have probably tested your website on localhost. You basically get packets from your computer in form of http requests and then send packets back to your own computer.
@@ -33,7 +33,7 @@ $ sudo ip netns exec ns1 bash # creates a shell in the namespace
 ```
 notice that we have executed bash on the namespace to be able to interact with our namespace.
 
-Now lets make a nameserver and try to connect to it.
+Now lets make a server and try to connect to it.
 
 ```
 $ nc -lnvp 8900 &
@@ -66,4 +66,6 @@ Host: localhost:8900
 User-Agent: curl/7.86.0
 Accept: */*
 ```
-And here it is! The netcat server recieved a connection from port 49636.
+And here it is! The netcat server recieved an incoming connection from port 49636 but on the same computer.
+
+> You can remove network namespace `ns1` by running `sudo ip netns delete ns1`
